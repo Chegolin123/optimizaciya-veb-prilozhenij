@@ -1,0 +1,116 @@
+/* Лабораторная работа №2: мобильная оптимизация и адаптивность.
+   Базовые (мобильные) стили + четыре медиа-запроса из задания:
+   до 600px — мобильные, 768–959 — планшет, 1280–1919 — ноутбук, 2400+ — большой монитор. */
+
+:root {
+  --bg: #ffffff;
+  --text: #1c2530;
+  --muted: #5b6b7c;
+  --accent: #1f6feb;
+  --card: #f4f7fb;
+  --border: #dde5ee;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 15px;                 /* базовый размер для телефонов */
+  line-height: 1.55;
+  color: var(--text);
+  background: var(--bg);
+  /* не даём тексту «вылезать» на узких экранах */
+  overflow-wrap: break-word;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 12px;                 /* базовые отступы — мобильные */
+}
+
+/* ---------------------------------------------------------------- шапка */
+.header { background: #10233c; color: #fff; }
+.header-row { display: flex; flex-direction: column; gap: 8px; padding-top: 10px; padding-bottom: 10px; }
+.logo { font-weight: 700; font-size: 17px; }
+.nav { display: flex; flex-wrap: wrap; gap: 12px; }
+.nav a { color: #cfe0f5; text-decoration: none; font-size: 14px; }
+.nav a:hover { color: #fff; text-decoration: underline; }
+
+/* ---------------------------------------------------------------- сетка */
+.layout { display: block; padding-top: 14px; padding-bottom: 24px; }
+.main-content h1 { font-size: 21px; margin: 0 0 8px; }
+.lead { color: var(--muted); margin: 0 0 14px; }
+.figure { margin: 0 0 16px; }
+.figure img { border-radius: 8px; background: var(--card); }
+figcaption { font-size: 12px; color: var(--muted); margin-top: 6px; }
+.cards { display: grid; gap: 10px; grid-template-columns: 1fr; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 10px; }
+.card h3 { margin: 0 0 4px; font-size: 15px; }
+.card p { margin: 0; font-size: 13px; color: var(--muted); }
+.sidebar { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 12px; margin-top: 14px; }
+.sidebar h2 { font-size: 16px; margin: 0 0 8px; }
+.sidebar ul { margin: 0; padding-left: 18px; }
+.sidebar li { font-size: 13px; color: var(--muted); margin-bottom: 4px; }
+.note { font-size: 12px; color: var(--muted); margin: 8px 0 0; }
+.footer { border-top: 1px solid var(--border); background: #f7f9fc; color: var(--muted); font-size: 12px; }
+.footer .container { padding-top: 10px; padding-bottom: 10px; }
+
+/* ============================ МОБИЛЬНЫЕ УСТРОЙСТВА (до 600px) ============================ */
+@media only screen and (max-width: 600px) {
+  body { font-size: 14px; }
+  .header { padding: 0; }
+  .header-row { padding: 10px; }
+  .main-content h1 { font-size: 20px; }
+  .layout { padding-top: 12px; padding-bottom: 18px; }
+  .sidebar { margin-top: 12px; padding: 10px; }
+  .cards { grid-template-columns: 1fr; }
+  .container { padding: 0 10px; }
+}
+
+/* ==================== ПЛАНШЕТЫ В ПОРТРЕТНОЙ ОРИЕНТАЦИИ (768–959px) ==================== */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  body { font-size: 16px; }
+  .header-row { flex-direction: row; align-items: center; justify-content: space-between; padding: 20px; }
+  .layout { display: flex; gap: 20px; padding-top: 20px; }
+  .main-content { float: left; width: 70%; }
+  .sidebar { float: right; width: 30%; margin-top: 0; padding: 20px; }
+  .main-content h1 { font-size: 24px; }
+  .cards { grid-template-columns: 1fr 1fr; }
+  .container { padding: 0 20px; }
+  .footer .container { padding: 14px 20px; }
+}
+
+/* ================ НОУТБУКИ И СТАНДАРТНЫЕ МОНИТОРЫ (1280–1919px) ================= */
+@media only screen and (min-width: 1280px) and (max-width: 1919px) {
+  body { font-size: 18px; }
+  .header-row { flex-direction: row; align-items: center; justify-content: space-between; padding: 30px; }
+  .header { background: #10233c; }
+  .layout { display: flex; gap: 30px; padding-top: 30px; }
+  .main-content { float: left; width: 65%; }
+  .sidebar { float: right; width: 35%; margin-top: 0; padding: 30px; }
+  .main-content h1 { font-size: 28px; }
+  .cards { grid-template-columns: 1fr 1fr 1fr; }
+  .container { padding: 0 30px; }
+  .footer .container { padding: 18px 30px; }
+}
+
+/* ==================== БОЛЬШИЕ МОНИТОРЫ И ТЕЛЕВИЗОРЫ (от 2400px) ================= */
+@media only screen and (min-width: 2400px) {
+  body { font-size: 20px; }
+  .header-row { flex-direction: row; align-items: center; justify-content: space-between; padding: 40px; }
+  .header { background: #0d1c30; }
+  .container { max-width: 1700px; }
+  .layout { display: block; padding-top: 40px; }
+  .main-content { width: 60%; margin: 0 auto; }
+  .sidebar { width: 30%; margin: 30px auto 0; padding: 40px; }
+  .main-content h1 { font-size: 32px; }
+  .cards { grid-template-columns: 1fr 1fr 1fr; }
+  .footer .container { padding: 24px 40px; }
+}

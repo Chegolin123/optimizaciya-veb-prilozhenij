@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>О проекте — RemontAkt</title>
+  <meta name="description" content="Как устроен RemontAkt: инструмент для контроля выполнения работ, отслеживания оплат и актов.">
+  <meta name="keywords" content="RemontAkt, Ремонт, Дизайн, скрытые работы, строительство, стройка, ">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Визитка - RemontAkt">
+  <meta property="og:description" content="Зачем нужен RemontAkt, как он устроен и на чём сделан.">
+  <meta property="og:image" content="images/04-project.png">
+</head>
+<body>
+  <header>
+    <h1>RemontAkt</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="about.html">О проекте</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>О проекте</h1> <!- второй h1 ->
+    <p>RemontAkt - платформа для компаний и частных масетров, позволяющая контролировать выполнение работ</p>
+
+    <img src="images/04-project.png" alt="" width="900" height="563">
+                                <!- пустой alt ->
+
+    <section>
+      <h2>Как это устроено</h2>
+      <p>Исполнитель ведёт объекты и этапы, рабочие отмечают выход в табеле, каждая фотография получает хэш SHA-256. Когда этап закрыт, из выполненных работ собирается тело акта, оно подписывается ключом Ed25519, а заказчик подписывает акт по ссылке с телефона.</p>
+    </section>
+
+    <section>
+      <h2>На чём сделан</h2>
+      <ul>
+        <li>Laravel 13 и PHP 8.4;</li>
+        <li>MySQL, 28 таблиц предметной области;</li>
+        <li>подписи — libsodium (Ed25519), хэши — SHA-256;</li>
+        <li>337 автотестов, все зелёные.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Роли в системе</h2>
+      <p>Собственник видит деньги по договорам, прораб выпускает акты, рабочий отмечается в табеле, частный мастер ведёт объекты сам, а заказчик подписывает акт без аккаунта.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 RemontAkt. Платформа учёта и координации строительных бригад.</p>
+    <p>Демо-стенд: http://100.95.240.30:8095</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chegolin123.github.io/optimizaciya-veb-prilozhenij/sitemap.xml

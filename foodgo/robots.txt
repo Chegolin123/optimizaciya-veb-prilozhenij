@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /search/
+Disallow: /?utm_
+Disallow: /?from=
+Disallow: /&
+
+User-agent: Yandex
+Allow: /
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /search/
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term
+
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /search/
+
+Host: https://chegolin123.github.io
+Sitemap: https://chegolin123.github.io/optimizaciya-veb-prilozhenij/foodgo/sitemap.xml
